@@ -1,22 +1,13 @@
 package main
 
 import (
-    "fmt"
-    "html"
     "log"
     "net/http"
 )
 
 func main() {
 
-    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, "Hello i'm ajith, %q", html.EscapeString(r.URL.Path))
-    })
+    http.Handle("/", http.FileServer(http.Dir("./mywebsite")))
 
-    http.HandleFunc("/hi", func(w http.ResponseWriter, r *http.Request){
-        fmt.Fprintf(w, "Hi")
-    })
-
-    log.Fatal(http.ListenAndServe(":8081", nil))
-
+    log.Fatal(http.ListenAndServeTLS(":443", "server.crt", "server.key", nil))
 }
