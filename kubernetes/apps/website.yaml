@@ -15,7 +15,7 @@ kind: Deployment
 metadata:
   name: website
 spec:
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       app: gocontainer
