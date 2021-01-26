@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
       - name: website
-        image: ajithreddydocker/webiteapp:0.04
+        image: ajithreddydocker/webiteapp:0.05
         ports:
         - containerPort: 8080
