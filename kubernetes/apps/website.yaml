@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
       - name: website
-        image: ajithreddydocker/webiteapp:webina
+        image: ajithreddydocker/webiteapp:webinar1
         ports:
         - containerPort: 8080
